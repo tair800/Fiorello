@@ -11,8 +11,6 @@
                 {
                      <div> <img src="~/img/@slider.ImgUrl" alt=""> </div>
                 }
-               
-                
             </div>
             <div class="container context pl-lg-5 ml-lg-3">
                 <div class="row">
@@ -51,7 +49,6 @@
                             </li>
                         </ul>
                         <ul class="category d-none d-md-flex list-unstyled">
-                            <li><a href="" data-id="all">All</a></li>
                             @foreach (var category in Model.Categories)
                     {
                         <li><a href="" data-id="@category.Name.ToLower()">@category.Name</a></li>
@@ -60,7 +57,7 @@
                         </ul>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="" class="mr-2">Filter</a>
+                                <a asp-controller="product" asp-action="index" class="mr-2">Filter</a>
                                 <i class="fas fa-caret-down"></i>
                             </li>
                         </ul>
@@ -223,7 +220,9 @@
                 <div class="row py-5">
                     <div class="offset-lg-3 col-lg-6">
                         <div class="section-title">
-                            <h1>From our Blog</h1>
+                             <a class="text-decoration-none text-dark" asp-controller="blog" asp-action="index">
+                                  <h1> From our Blog</h1>
+                             </a>
                             <p class="text-black-50">A perfect blend of creativity, energy, communication, happiness and
                                 love. Let us arrange
                                 a smile for you.</p>
@@ -231,27 +230,7 @@
                     </div>
                 </div>
                 <div class="row pb-5">
-            @foreach(var blog in Model.Blogs)
-            {
-                   <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id">
-                                    <img src="~/img/@blog.ImgUrl" class="img-fluid" alt="">
-                                </a>
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>@blog.CreatedDate?.ToString("dd.MM.yyyy")</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                 <a asp-controller="blog" asp-action="detail" asp-route-id="@blog.Id" class="text-dark text-decoration-none">
-                                <h5>@blog.Title</h5>
-                                </a>
-                                <p class="text-black-50">@blog.ShortDesc...</p>
-                            </div>
-                        </div>
-                    </div>
-            }
+           @await Component.InvokeAsync("Blog",3)
          
                    
                 </div>
@@ -323,4 +302,4 @@
             </div>
         </section>
 
-        <!-- INSTAGRAM END -->
+

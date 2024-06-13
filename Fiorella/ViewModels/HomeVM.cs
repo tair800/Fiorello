@@ -9,6 +9,5 @@ namespace Fiorella.ViewModels
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ProductImage> ProductImages { get; set; }
         public SliderEntity SliderEntities { get; set; }
-        public IEnumerable<Blog> Blogs { get; set; }
     }
 }

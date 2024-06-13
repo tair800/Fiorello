@@ -20,14 +20,12 @@ namespace Fiorella.Controllers
             var sliderEntities = _context.SliderEntities.AsNoTracking().SingleOrDefault();
             var categories = _context.Categories.ToList();
             var products = _context.Products.Include(p => p.ProductImages).ToList();
-            var blogs = _context.Blogs.Take(3).ToList();
             var homeVM = new HomeVM()
             {
                 Sliders = sliders,
                 SliderEntities = sliderEntities,
                 Categories = categories,
                 Products = products,
-                Blogs = blogs
 
             };
             return View(homeVM);
