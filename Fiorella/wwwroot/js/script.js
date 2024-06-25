@@ -17,6 +17,22 @@
             })
         }
     });
+$(document).on("keyup", "#input-search", function () {
+    $("#searchList li").slice(1).remove();
+    let input = $(this).val().trim();
+    if (input) {
+        $.ajax({
+            url: "/product/SearchProduct?text=" + input,
+            method: "get",
+            success: function (datas) {
+                $("#searchList").append(datas)
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        })
+    }
+});
 
     let skipProduct=4
 $(document).on("click", "#loadmore-product", function () {

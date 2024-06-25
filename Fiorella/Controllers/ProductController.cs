@@ -39,6 +39,7 @@ namespace Fiorella.Controllers
 
             var datas = _context.Products
                 .Include(p => p.ProductImages)
+                .Include(p => p.Category)
                 .ToList();
             ViewBag.ProductCount = datas.Count;
 
@@ -55,6 +56,11 @@ namespace Fiorella.Controllers
         {
             var products = _context.Products.Include(m => m.ProductImages).Skip(offset).Take(4).ToList();
             return PartialView("_ProductPartialView", products);
+        }
+        public IActionResult SearchProduct(string text)
+        {
+            var datas = _context.Products.Where(n => n.Name.ToLower().Contains(text.ToLower())).Take(5).ToList();
+            return PartialView("_ProductSearchPartial", datas);
         }
     }
 }

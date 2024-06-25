@@ -15,10 +15,8 @@ namespace Fiorella.Controllers
 
         public IActionResult Index()
         {
-            var query = _context.Blogs.AsQueryable();
-            ViewBag.BlogCount = query.Count();
-            var datas = query.AsNoTracking().Take(3).ToList();
-            return View(datas);
+            ViewBag.BlogCount = _context.Blogs.Count();
+            return View();
         }
         public IActionResult Detail(int? id)
         {

@@ -12,10 +12,13 @@ namespace Fiorella.Controllers
         public HomeController(FiorelloDbContext context)
         {
             _context = context;
+
         }
 
         public IActionResult Index()
         {
+
+
             var sliders = _context.Sliders.AsNoTracking().ToList();
             var sliderEntities = _context.SliderEntities.AsNoTracking().SingleOrDefault();
             var categories = _context.Categories.ToList();

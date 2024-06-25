@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fiorella")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2d785b2d661e2334cc1cdee4be4769c14340ca3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a14fc8b9a392dc5ae3cc65ba6cd9c4038678e04a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fiorella")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fiorella")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

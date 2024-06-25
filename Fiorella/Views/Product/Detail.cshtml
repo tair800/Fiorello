@@ -7,7 +7,7 @@
         <div class="row py-5">
             <div class="col-lg-6 text-center">
                 <div class="img">
-                    <img src="~/img/@Model.ProductImages" class="img-fluid" alt="">
+                    <img src="~/img/@Model.ProductImages.FirstOrDefault(m=>m.IsMain)?.ImageUrl" class="img-fluid" alt="">
 
                 </div>
             </div>
