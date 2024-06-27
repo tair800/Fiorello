@@ -33,7 +33,7 @@ namespace Fiorella.Data.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 6, 25, 12, 15, 6, 638, DateTimeKind.Local).AddTicks(8268));
+                        .HasDefaultValue(new DateTime(2024, 6, 26, 14, 16, 42, 369, DateTimeKind.Local).AddTicks(9451));
 
                     b.Property<string>("Desc")
                         .HasColumnType("nvarchar(max)");
@@ -59,6 +59,10 @@ namespace Fiorella.Data.Migrations
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Desc")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Name")
                         .IsRequired()
