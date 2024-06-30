@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/f4lr9vKmCSNC48w3oINhmiCqTKAadOwl1bzOuyV+2E=",
+  "Hash": "yhjjE7ZLWKZ8xAnU31aCl899W8I1tvssjfpSKjxxL6M=",
   "Source": "Fiorella",
   "BasePath": "_content/Fiorella",
   "Mode": "Default",
@@ -2238,6 +2238,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\09ef811e-9c23-4021-9e41-46ce39ac65cc.png",
+      "SourceId": "Fiorella",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\",
+      "BasePath": "_content/Fiorella",
+      "RelativePath": "img/09ef811e-9c23-4021-9e41-46ce39ac65cc.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\09ef811e-9c23-4021-9e41-46ce39ac65cc.png"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\blog-feature-img-1.jpg",

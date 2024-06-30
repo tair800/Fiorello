@@ -65,5 +65,37 @@ namespace Fiorella.Areas.AdminArea.Controllers
 
             return RedirectToAction("index");
         }
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null) return BadRequest();
+            var details = await _context.Categories.AsNoTracking().FirstOrDefaultAsync(k => k.Id == id);
+            if (details is null) return BadRequest();
+
+
+
+            return View(new CategoryUpdateVM { Desc = details.Desc, Name = details.Name });
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Update(int? id, CategoryUpdateVM categoryUpdateVM)
+        {
+            if (id == null) return BadRequest();
+            if (!ModelState.IsValid) return View(categoryUpdateVM);
+            var details = await _context.Categories.FirstOrDefaultAsync(k => k.Id == id);
+            if (details is null) return BadRequest();
+            var existCategoryName = _context.Categories
+                .Any(k => k.Name.ToLower() == categoryUpdateVM.Name.ToLower() && k.Id != id);
+            if (existCategoryName)
+            {
+                ModelState.AddModelError("Name", "Given name already exists");
+                return View(categoryUpdateVM);
+            }
+            details.Name = categoryUpdateVM.Name;
+            details.Desc = categoryUpdateVM.Desc;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        }
     }
 }
