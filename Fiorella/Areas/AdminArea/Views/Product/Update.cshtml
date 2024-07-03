@@ -1,13 +1,25 @@
-﻿@model ProductCreateVM  
-@{
-    var categories =ViewBag.Categories;
-}
+﻿@model ProductUpdateVM
+
 <div class="container">
     <div class="row">
         <div class="card">
             <div class="card-body">
+                @foreach (var img in Model.ProductImages)
+                {
+                    if (img.IsMain)
+                    {
+                        <img src="~/img/@img.ImageUrl" width="300" height="150" />
+                        <span>Is Main</span> <br /> <br />
+                    }
+                    else
+                    {
+                        <img src="~/img/@img.ImageUrl" width="200" height="100" />
+                        <a class="btn btn-success" asp-action="DeleteImage" asp-route-id="@img.Id">Delete Image</a>
+                        <br /> <br />
+                    }
+                }
                 <h4 class="card-title">Product Create form</h4>
-                <form enctype="multipart/form-data" asp-action="create" method="post" class="forms-sample">
+                <form enctype="multipart/form-data"  method="post" class="forms-sample">
                     <div class="form-group">
                         <label asp-for="Name"></label>
                         <input asp-for="Name" class="form-control" placeholder="Name">
@@ -31,16 +43,13 @@
                         <span class="text-danger" asp-validation-for="Photos"></span> @* //errorlari gosderir *@
 
                     </div>
-                    <div class="form-group" >
-                        <select asp-for="CategoryId" asp-items="@categories" >
-                               @*  @foreach (var category in categories)
-                                {
-                                    <option value="@category.Id">@category.Name</option>   
-                                }  *@
+                    <div class="form-group">
+                        <select asp-for="CategoryId" asp-items="@ViewBag.Categories">
+                           
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mr-2">Create</button>
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
                     <a asp-action="index" class="btn btn-light">Go Back</a>
                 </form>
             </div>

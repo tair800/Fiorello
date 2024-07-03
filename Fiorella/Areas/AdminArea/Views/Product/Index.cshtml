@@ -26,7 +26,7 @@
                                 {
                                     <tr>
                                        <td>
-                                            <img src="~/img/@product.ProductImages.FirstOrDefault(k=>k.IsMain).ImageUrl" alt="" />
+                                            <img src="~/img/@product.ProductImages.FirstOrDefault(k=>k.IsMain)?.ImageUrl" alt="" />
                                        </td>
                                         <td>
                                             @product.Name

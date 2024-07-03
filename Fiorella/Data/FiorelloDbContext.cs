@@ -1,9 +1,10 @@
 ﻿using Fiorella.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Fiorella.Data
 {
-    public class FiorelloDbContext : DbContext
+    public class FiorelloDbContext : IdentityDbContext<AppUser>
     {
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<SliderEntity> SliderEntities { get; set; }
