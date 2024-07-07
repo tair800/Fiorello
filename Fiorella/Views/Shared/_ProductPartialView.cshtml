@@ -5,7 +5,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
         <div class="product-item text-center" data-id="@product.ProductImages">
             <div class="img">
-                <a href="">
+                <a asp-action="Detail" asp-controller="Product" asp-route-id="@product.Id">
                     <img src="~/img/@(product.ProductImages.Any(i=>i.IsMain)?product.ProductImages.FirstOrDefault()?.ImageUrl:product.ProductImages.FirstOrDefault()?.ImageUrl)" class="img-fluid" alt="">
                 </a>
             </div>
