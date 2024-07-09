@@ -3,6 +3,7 @@ using Fiorella.Data;
 using Fiorella.Extensions;
 using Fiorella.Helpers;
 using Fiorella.Models;
+using Fiorella.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,10 +15,13 @@ namespace Fiorella.Areas.AdminArea.Controllers
     public class ProductController : Controller
     {
         private readonly FiorelloDbContext _context;
+        private readonly IEmailService _emailService;
 
-        public ProductController(FiorelloDbContext context)
+
+        public ProductController(FiorelloDbContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
 
@@ -81,6 +85,19 @@ namespace Fiorella.Areas.AdminArea.Controllers
 
             await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();
+
+
+
+            List<string> emails = new() { "fiorello088@gmail.com", "tahir.aslanlee@gmail.com" };
+
+            string body = $"<a href='http://localhost:5225/product/detail/{newProduct.Id}'>Go to product</a>";
+
+            _emailService.SendEmail(emails, body, "New Product", "View product");
+
+
+
+
+
             return RedirectToAction(nameof(Index));
         }
 

@@ -25,6 +25,7 @@ namespace Fiorella
             });
             services.AddHttpContextAccessor();
             services.AddScoped<IBasketService, BasketService>();
+            services.AddScoped<IEmailService, EmailService>();
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password = new()
@@ -47,6 +48,7 @@ namespace Fiorella
                 {
                     RequireUniqueEmail = true,
                 };
+                options.SignIn.RequireConfirmedEmail = true;
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<FiorelloDbContext>();
         }

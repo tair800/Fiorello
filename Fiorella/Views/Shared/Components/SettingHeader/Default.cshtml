@@ -119,8 +119,12 @@
                                 @if (User.Identity.IsAuthenticated)
                                 {
                                     <p>@ViewBag.FullName</p>
-                                    <a asp-controller="account" asp-action="login" > Log Out</a>
-                                   
+                                    <a asp-controller="account" asp-action="logout" > Log Out</a>
+                                    if (User.IsInRole("admin"))
+                                    {
+                                        <a asp-area="adminarea" asp-controller="dashboard" asp-action="index"> ADmin</a>
+
+                                    }
                                 }
                                 else
                                 {

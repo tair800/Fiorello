@@ -44,6 +44,9 @@ namespace Fiorella.Data.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsBlocked")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -101,7 +104,7 @@ namespace Fiorella.Data.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 7, 10, 39, 54, 414, DateTimeKind.Local).AddTicks(9115));
+                        .HasDefaultValue(new DateTime(2024, 7, 8, 16, 53, 45, 348, DateTimeKind.Local).AddTicks(6776));
 
                     b.Property<string>("Desc")
                         .HasColumnType("nvarchar(max)");

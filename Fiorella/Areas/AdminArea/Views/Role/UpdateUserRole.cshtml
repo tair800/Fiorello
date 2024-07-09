@@ -1,0 +1,15 @@
+﻿@using Fiorella.Areas.AdminArea.ViewModels.User
+@model RoleUpdateVM
+
+<h1>@Model.UserName</h1>
+
+
+<form method="post">
+
+    @foreach (var role in Model.Roles)
+    {
+        <input @(Model.UserRoles.Contains(role.Name)?"checked":"")
+            name="newUserRoles" type="checkbox" value="@role.Name" /> @role.Name <br /> <br />
+    }
+    <button type="submit" >Update</button>
+</form>
