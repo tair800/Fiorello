@@ -34,6 +34,9 @@ namespace Fiorella.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ConnectionId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -104,7 +107,7 @@ namespace Fiorella.Data.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 8, 16, 53, 45, 348, DateTimeKind.Local).AddTicks(6776));
+                        .HasDefaultValue(new DateTime(2024, 7, 15, 12, 49, 9, 968, DateTimeKind.Local).AddTicks(72));
 
                     b.Property<string>("Desc")
                         .HasColumnType("nvarchar(max)");

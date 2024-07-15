@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/e5ICGDQDMfHK3SuhSfo4X1flWcC3PUC9KLcgTvzZOY=",
+  "Hash": "rhYZhGQN9jQyVFvXP5Feh8bcfBScOcHBDO2r0oRGx44=",
   "Source": "Fiorella",
   "BasePath": "_content/Fiorella",
   "Mode": "Default",
@@ -2297,6 +2297,25 @@
       "OriginalItemSpec": "wwwroot\\img\\04fbc6a8-8855-4555-9e37-a2a6e3aad6df.jpg"
     },
     {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\08496c07-55a9-4637-8af9-f450c27b86a9.jpg",
+      "SourceId": "Fiorella",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\",
+      "BasePath": "_content/Fiorella",
+      "RelativePath": "img/08496c07-55a9-4637-8af9-f450c27b86a9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\08496c07-55a9-4637-8af9-f450c27b86a9.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\09ef811e-9c23-4021-9e41-46ce39ac65cc.png",
       "SourceId": "Fiorella",
       "SourceType": "Discovered",
@@ -2314,6 +2333,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\09ef811e-9c23-4021-9e41-46ce39ac65cc.png"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\186413ef-3658-4eeb-afce-e380d8254f54.jpg",
+      "SourceId": "Fiorella",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\",
+      "BasePath": "_content/Fiorella",
+      "RelativePath": "img/186413ef-3658-4eeb-afce-e380d8254f54.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\186413ef-3658-4eeb-afce-e380d8254f54.jpg"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\327e4d90-fdd9-470a-abf5-d5a4ba0f5425.jpg",
@@ -2542,6 +2580,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\8e02cf03-2d63-4a6c-927b-e6051224955a.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\948a70b9-fa4c-4eed-b510-0a1c7e562e64.png",
+      "SourceId": "Fiorella",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\",
+      "BasePath": "_content/Fiorella",
+      "RelativePath": "img/948a70b9-fa4c-4eed-b510-0a1c7e562e64.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\948a70b9-fa4c-4eed-b510-0a1c7e562e64.png"
     },
     {
       "Identity": "C:\\Users\\Owner\\Desktop\\Fiorella\\Fiorella\\wwwroot\\img\\94b0cc95-b997-4359-bc25-1df6f90cb6c2.jpg",

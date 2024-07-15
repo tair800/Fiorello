@@ -1,4 +1,5 @@
 using Fiorella;
+using Fiorella.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -8,8 +9,9 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.MapControllerRoute(
            name: "areas",
@@ -19,4 +21,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
     );
+app.MapHub<ChatHub>("/testhub");
 app.Run();

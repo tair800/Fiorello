@@ -1,6 +1,7 @@
 ﻿using Fiorella.Areas.AdminArea.ViewModels.Category;
 using Fiorella.Data;
 using Fiorella.Models;
+using Fiorella.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,12 +17,12 @@ namespace Fiorella.Areas.AdminArea.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var categories = await _context.Categories
-                .AsNoTracking()
-                .ToListAsync();
-            return View(categories);
+            var query = _context.Categories
+                .AsNoTracking();
+            return View(await PaginationVM<Category>.CreateVM(query, page, 2));
+
         }
         public async Task<IActionResult> Detail(int? id)
         {

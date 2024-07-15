@@ -109,11 +109,12 @@ namespace Fiorella.Controllers
                 ModelState.AddModelError("", "Account is Blocked for a while ");
                 return View(loginVM);
             }
-            if (!user.EmailConfirmed)
-            {
-                ModelState.AddModelError("", "Verification needed");
-                return View(loginVM);
-            }
+            //todo:email verify sondurmusen
+            //if (!user.EmailConfirmed)
+            //{
+            //    ModelState.AddModelError("", "Verification needed");
+            //    return View(loginVM);
+            //}
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Username or Password is wrong");
@@ -144,10 +145,14 @@ namespace Fiorella.Controllers
             return Content("Roles added");
 
         }
+
+
         public IActionResult ForgetPassword()
         {
             return View();
         }
+
+
         [HttpPost]
         public async Task<IActionResult> ForgetPassword(string email)
         {
@@ -177,10 +182,19 @@ namespace Fiorella.Controllers
 
             return RedirectToAction("index", "home");
         }
-        public IActionResult ResetPassword()
+
+
+        public async Task<IActionResult> ResetPassword(string email, string token)
         {
+            var existUser = await _userManager.FindByEmailAsync(email);
+            if (existUser is null) return NotFound();
+            bool result = await _userManager
+                .VerifyUserTokenAsync(existUser, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", token);
+            if (result is false) return Content("Token expired");
             return View();
         }
+
+
         [HttpPost]
         public async Task<IActionResult> ResetPassword(string email, string token, ResetPasswordVM resetPasswordVM)
         {
@@ -189,8 +203,10 @@ namespace Fiorella.Controllers
             if (!ModelState.IsValid) return View();
 
             await _userManager.ResetPasswordAsync(appUser, token, resetPasswordVM.Password);
+            await _userManager.UpdateSecurityStampAsync(appUser);
+            await _signInManager.SignInAsync(appUser, true);
 
-            return RedirectToAction("login", "account");
+            return RedirectToAction("index", "home");
         }
 
     }

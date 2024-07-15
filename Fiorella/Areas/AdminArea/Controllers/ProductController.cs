@@ -4,6 +4,7 @@ using Fiorella.Extensions;
 using Fiorella.Helpers;
 using Fiorella.Models;
 using Fiorella.Services.Interfaces;
+using Fiorella.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -25,14 +26,14 @@ namespace Fiorella.Areas.AdminArea.Controllers
         }
 
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var products = await _context.Products
+            var query = _context.Products
                 .Include(p => p.ProductImages)
                 .Include(p => p.Category)
-                .AsNoTracking()
-                .ToListAsync();
-            return View(products);
+                .AsNoTracking();
+
+            return View(await PaginationVM<Product>.CreateVM(query, page, 2));
         }
         public async Task<IActionResult> Create()
         {

@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Fiorella.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class DashBoardController : Controller
     {
 

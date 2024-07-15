@@ -12,7 +12,21 @@
     <link rel="stylesheet" href="~/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="~/owlcarousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/style.css">
-    <title>Fiorello &#8211; A Flower Shop and Florist WooCommerce Theme</title>
+    <title>@ViewData["Title"]</title>
+    <style>
+        .test{
+            display:inline-block;
+            width:20px;
+            height:20px;
+            border-radius:50%
+        }
+        .bg-online{
+            background-color:green;
+        }
+        .bg-offline{
+            background-color:silver;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,6 +59,7 @@
     <script src="https://kit.fontawesome.com/e5e249fce2.js" crossorigin="anonymous"></script>
     <script src="~/owlcarousel/owl.carousel.min.js"></script>
     <script src="~/js/script.js"></script>
+    @RenderSection("Scripts",false);
 </body>
 
 </html>

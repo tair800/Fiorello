@@ -44,13 +44,15 @@ namespace Fiorella
                     AllowedForNewUsers = true,
                     DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5)
                 };
-                options.User = new()
-                {
-                    RequireUniqueEmail = true,
-                };
-                options.SignIn.RequireConfirmedEmail = true;
+                //options.User = new()
+                //{
+                //    todo:email confirm sondurmusen
+                //     RequireUniqueEmail = true,
+                //};
+                //options.SignIn.RequireConfirmedEmail = true;
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<FiorelloDbContext>();
+            services.AddSignalR();
         }
     }
 }
